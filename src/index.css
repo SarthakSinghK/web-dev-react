@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+  background: #eeab81;
+  color: #f1f1f1;
+}
+.booklist {
+  width: 90vh;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.book {
+  background: #af5b02f6;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.book img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.book h2 {
+  margin-top: 10rem;
+  font-size: 1remz;
+}
