@@ -24,6 +24,7 @@ body {
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
+    align-items: start;
   }
 }
 .book {
@@ -41,4 +42,7 @@ body {
 .book h2 {
   margin-top: 10rem;
   font-size: 1remz;
+}
+book p {
+  margin: 1rem 0rem 0.5rem;
 }
