@@ -21,7 +21,7 @@ function Booklist() {
 
 const Book = (props) => {
   const title = "Atomic Habits";
-  const author = "James clear";
+  const author = "James cler";
   return (
     <article className="book">
       <img src={props.Pictu} alt="Atomic Habits" />
