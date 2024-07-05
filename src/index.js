@@ -10,10 +10,12 @@ const books = [
   {
     topic: "Atomic Habits",
     writer: "James cler",
+    ud: 1,
   },
   {
     topic: "cars and coffee",
     writer: "sarthak singh kanwar",
+    ud: 2,
   },
 ];
 
@@ -28,10 +30,10 @@ function Booklist() {
   return (
     <section className="booklist">
       {books.map((intel) => {
-        const {topic,writer}=intel   // destructuring intel that is basically the array which is possible because of map func
+        const { topic, writer, ud } = intel; // destructuring intel that is basically the array which is possible because of map func
         console.log(intel.author);
         return (
-          <Book title={topic} author={writer} />
+          <Book title={topic} author={writer} key={ud} id={ud} />
 
           // <div>
           //   <h2>{intel.author}</h2>
@@ -42,13 +44,14 @@ function Booklist() {
   );
 }
 
-const Book = ({ title, author, children }) => {
+const Book = ({ title, author, children,id }) => {
   // const { title, author } = props;
   return (
     <article className="book">
       <img src="ssk" alt={title} />
       <h2>{title}</h2>
-      <h4>{author} </h4>
+      <h4>{author}</h4>
+      <h3>{id}</h3>
       {children}
     </article>
   );
