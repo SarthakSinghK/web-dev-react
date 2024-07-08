@@ -2,57 +2,61 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-// function Greeting() {
-//   return <h1>this is the greetings to you from me </h1>;
-// }
-
+// const friends = ['jakson ka michle','susan','drake remore']
+// const newF = [...friends,'sakshi']
+// console.log(newF);
 const books = [
   {
     topic: "Atomic Habits",
     writer: "James cler",
+    publisher: "jhone wick",
+    value: "100cr",
     ud: 1,
   },
   {
     topic: "cars and coffee",
     writer: "sarthak singh kanwar",
+    publisher: "Maviys prints ",
+    value: "150cr",
     ud: 2,
-  },
-];
+  },{
+    topic: "cool bikes ",
+    writer: "singh kanwar sarthak",
+    publisher: "Mototrola cp",
+    value: "60cr",
+    ud: 2,
+    
+  }]
 
-const names = ["jake", "rock", "chris", "scarlet"];
 
-const newN = names.map((vegetable) => {
-  // console.log(vegetable);
-  return <h1>{vegetable}</h1>;
-});
-// console.log();
+// const names = ["jake", "rock", "chris", "scarlet"];
+
+// const newN = names.map((vegetable) => {
+  
+//   return <h1>{vegetable}</h1>;
+// });
+
 function Booklist() {
   return (
     <section className="booklist">
       {books.map((intel) => {
-        const { topic, writer, ud } = intel; // destructuring intel that is basically the array which is possible because of map func
-        console.log(intel.author);
-        return (
-          <Book title={topic} author={writer} key={ud} id={ud} />
-
-          // <div>
-          //   <h2>{intel.author}</h2>
-          // </div>
-        );
+        console.log(intel);
+        return < Book {...intel} key={intel.id}/>;
       })}
     </section>
   );
 }
 
-const Book = ({ title, author, children,id }) => {
+const Book = (props) => {
+  const {topic,writer,value} = props;
+  
   // const { title, author } = props;
   return (
     <article className="book">
-      <img src="ssk" alt={title} />
-      <h2>{title}</h2>
-      <h4>{author}</h4>
-      <h3>{id}</h3>
-      {children}
+      <img src="ssk" alt={topic} />
+      <h2>{topic}</h2>
+      <h4>{writer}</h4>
+      <h3>{value}</h3>
     </article>
   );
 };
