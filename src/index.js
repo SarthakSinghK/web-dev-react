@@ -12,6 +12,8 @@ const books = [
     publisher: "jhone wick",
     value: "100cr",
     ud: 1,
+    pictu:
+      "https://images.filmibeat.com/webp/wallpapers/desktop/2023/07/mrunal-thakur_73.jpg",
   },
   {
     topic: "cars and coffee",
@@ -19,14 +21,21 @@ const books = [
     publisher: "Maviys prints ",
     value: "150cr",
     ud: 2,
-  },{
+    pictu:
+      "https://w0.peakpx.com/wallpaper/656/377/HD-wallpaper-mrunal-thakur-telugu-actress.jpg",
+    vod: "",
+  },
+  {
     topic: "cool bikes ",
     writer: "singh kanwar sarthak",
     publisher: "Mototrola cp",
     value: "60cr",
-    ud: 2,
-    
-  }]
+    ud: 3,
+    pictu:
+      "https://images.filmibeat.com/webp/wallpapers/desktop/2022/08/mrunal-thakur_68.jpg",
+    vod: "",
+  },
+];
 
 
 // const names = ["jake", "rock", "chris", "scarlet"];
@@ -39,24 +48,48 @@ const books = [
 function Booklist() {
   return (
     <section className="booklist">
+      <EventExample/>
       {books.map((intel) => {
         console.log(intel);
-        return < Book {...intel} key={intel.id}/>;
+        return < Book {...intel} key={ intel.ud } />;
       })}
     </section>
   );
 }
 
+const EventExample = () => {
+  const changeintext = () => {
+    console.log("the change is here")
+  
+  
+  }
+  const clickester = () => {
+    alert("did you clicked this button ");
+  };
+  return <section>
+    <form>
+      <h2>Typical Form</h2>
+      <br />
+      <input type="text" style={{margin: '1rem 0'}}  onChange={changeintext}/>
+    </form>
+    <button onClick={clickester}>this is the button </button>
+  </section>
+}
+
 const Book = (props) => {
-  const {topic,writer,value} = props;
+  const {topic,writer,value,ud,publisher,pictu,vod} = props;
   
   // const { title, author } = props;
   return (
     <article className="book">
-      <img src="ssk" alt={topic} />
+
+      <video src={vod}></video>
+      <img src={ pictu} alt={topic} />
       <h2>{topic}</h2>
       <h4>{writer}</h4>
       <h3>{value}</h3>
+      <h4>{ud}</h4>
+      { publisher}
     </article>
   );
 };
