@@ -2,9 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-// const friends = ['jakson ka michle','susan','drake remore']
-// const newF = [...friends,'sakshi']
-// console.log(newF);
 const books = [
   {
     topic: "Atomic Habits",
@@ -37,62 +34,34 @@ const books = [
   },
 ];
 
-// const names = ["jake", "rock", "chris", "scarlet"];
-
-// const newN = names.map((vegetable) => {
-
-//   return <h1>{vegetable}</h1>;
-// });
-
 function Booklist() {
+  const someVal = "yellow yellow yellow"
+  const displayVal = () => {
+    console.log(someVal)
+  }
   return (
     <section className="booklist">
-      <EventExample />
       {books.map((intel) => {
-        console.log("s");
-        return <Book {...intel} key={intel.ud} />;
+        return <Book {...intel} key={intel.ud} potato={displayVal} />;
       })}
     </section>
   );
 }
-const EventExample = () => {
-  return (
-    <section>
-      <form >
-        <h2>Typical Form</h2>
-        <br />
-        <input
-          name="intup"
-          type="text"
-          onChange={(e)=>console.log(e.target.value)}
-          style={{ margin: "1rem 0" }}
-          // onChange={(e) => console.log(e.target.value)}
-        />  
-        
-          <button type="" onClick={()=>console.log("this is submit")}>hogya</button>
-        
-        <button type="button" onClick={() => console.log("hello")}>
-          this is the button
-        </button>
-      </form>
-    </section>
-  );
-};
 
 const Book = (props) => {
-  const { topic, writer, value, ud, publisher, pictu, vod } = props;
-
-  // const { title, author } = props;
+  const { topic, writer,pictu,potato } = props;
+  const displaytitle = () => {
+    console.log(topic);
+    
+  }
   return (
     <article className="book">
-      <video src={vod}></video>
       <img src={pictu} alt={topic} />
+      <button onClick={potato}>title in the log</button>
       <h2>{topic}</h2>
       <h4>{writer}</h4>
-      <h3>{value}</h3>
-      <h4>{ud}</h4>
-      {/* <h1>{EventExample.a}</h1> */}
-      {/* {publisher} */}
+      <h1>{ potato}</h1>
+      
     </article>
   );
 };
