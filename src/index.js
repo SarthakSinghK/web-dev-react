@@ -56,36 +56,24 @@ function Booklist() {
   );
 }
 const EventExample = () => {
-  const changeintext = (e) => {
-    console.log("the change is here");
-    console.log(e.target.name);
-    // console.log(e.target.value.sa);
-    console.log(e.target.type);
-    let a = (e.target.value)
-    console.log(a);
-  };
-  const clickester = () => {
-    alert("did you clicked this button ");
-  };
-  const submitkb = (l) => {
-    l.preventDefault()
-    console.log("hello ji namaste ji kaam ho gya ji");
-  };
   return (
     <section>
-      <form onSubmit={submitkb}>
+      <form >
         <h2>Typical Form</h2>
         <br />
         <input
           name="intup"
           type="text"
+          onChange={(e)=>console.log(e.target.value)}
           style={{ margin: "1rem 0" }}
-          onChange={changeintext}
-        />
-      <div>
-        <button type="submit">hogya</button>
-      </div>
-      <button onClick={clickester}>this is the button </button>
+          // onChange={(e) => console.log(e.target.value)}
+        />  
+        
+          <button type="" onClick={()=>console.log("this is submit")}>hogya</button>
+        
+        <button type="button" onClick={() => console.log("hello")}>
+          this is the button
+        </button>
       </form>
     </section>
   );
@@ -104,7 +92,7 @@ const Book = (props) => {
       <h3>{value}</h3>
       <h4>{ud}</h4>
       {/* <h1>{EventExample.a}</h1> */}
-      {publisher}
+      {/* {publisher} */}
     </article>
   );
 };
