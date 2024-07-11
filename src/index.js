@@ -35,33 +35,35 @@ const books = [
 ];
 
 function Booklist() {
-  const someVal = "yellow yellow yellow"
-  const displayVal = () => {
-    console.log(someVal)
+  const getid = (id) => {
+    const book = books.find((amd) => amd.ud === id)
+    console.log(book);
   }
+  // getid(3)
   return (
+  
     <section className="booklist">
       {books.map((intel) => {
-        return <Book {...intel} key={intel.ud} potato={displayVal} />;
+        return <Book {...intel} key={intel.ud} bookget={getid} />;
       })}
+     
     </section>
   );
 }
 
 const Book = (props) => {
-  const { topic, writer,pictu,potato } = props;
-  const displaytitle = () => {
-    console.log(topic);
-    
+  const { topic, writer, pictu, bookget , ud} = props;
+  // console.log(props);
+
+  const getone = () => {
+    bookget(ud)
   }
   return (
     <article className="book">
       <img src={pictu} alt={topic} />
-      <button onClick={potato}>title in the log</button>
+      <button onClick={getone}>title in the log</button>
       <h2>{topic}</h2>
       <h4>{writer}</h4>
-      <h1>{ potato}</h1>
-      
     </article>
   );
 };
